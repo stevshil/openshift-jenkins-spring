@@ -30,7 +30,7 @@ spec:
             stage("Create Build") {
               steps {
                 dir('nysteveapp') {
-                  sh 'oc new-build --strategy docker --binary --name nystevebin'
+                  sh 'oc new-build --strategy docker --binary --name nystevebin || echo "Build already exists"'
                 }
               }
             }
